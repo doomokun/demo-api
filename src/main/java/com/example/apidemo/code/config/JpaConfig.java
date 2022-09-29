@@ -1,0 +1,25 @@
+package com.example.apidemo.code.config;
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import javax.sql.DataSource;
+
+@Configuration
+public class JpaConfig {
+    @Bean
+    public DataSource dataSource(Environment env) {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+
+        dataSource.setDriverClassName(env.getRequiredProperty("spring.datasource.driver-class-name"));
+        dataSource.setUsername(env.getRequiredProperty("spring.datasource.username"));
+        dataSource.setPassword(env.getRequiredProperty("spring.datasource.password"));
+        dataSource.setUrl(env.getRequiredProperty("spring.datasource.url"));
+
+        return dataSource;
+    }
+}
