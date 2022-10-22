@@ -3,3 +3,6 @@
 .gitignore
 */target
 README.md
+
+# helm chart
+docs/*
