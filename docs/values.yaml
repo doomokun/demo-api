@@ -1,0 +1,12 @@
+appServer:
+  image:
+    repository: tommydevv1/demo-api
+    tag: latest
+  service:
+    type: ClusterIP
+
+appDatabase:
+  name: api-demo-db
+
+global:
+  environment: dev

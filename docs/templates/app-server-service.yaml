@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-server
+  labels:
+    io.kompose.service: app-server
+spec:
+  type: {{ .Values.appServer.service.type }}
+  ports:
+    - port: 9000
+      targetPort: 8080
+      nodePort: 30316
+      protocol: TCP
+      name: http
+  selector:
+    io.kompose.service: app-server
