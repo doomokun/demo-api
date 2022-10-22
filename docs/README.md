@@ -1,22 +1,22 @@
-# api-demo-chart
+# demo-api-chart
 
 # Chart pages
-pages: https://doomokun.github.io/api-demo-chart
+pages: https://doomokun.github.io/demo-api
 
-repo: https://github.com/doomokun/api-demo-chart
-git: git@github.com:doomokun/api-demo-chart.git
+repo: https://github.com/doomokun/demo-api
+git: git@github.com:doomokun/demo-api.git
 
-branch: main
+branch: develop/docs
 
 # Helm Commands
 ```
-$ helm repo add api-demo-repo https://doomokun.github.io/api-demo-chart
+$ helm repo add demo-api-repo https://doomokun.github.io/demo-api
 
 $ helm package .
 $ helm repo index .
-$ helm repo index . --url https://doomokun.github.io/api-demo-chart
+$ helm repo index . --url https://doomokun.github.io/demo-api
 
-$ helm upgrade --install app-server api-demo-repo/api-demo-chart --set appServer.image.repository=${args.image} --set appServer.image.tag=${args.tag} --namespace=3-tier-app --create-namespace
+$ helm upgrade --install app-server demo-api-repo/demo-api --set appServer.image.repository=${args.image} --set appServer.image.tag=${args.tag} --namespace=3-tier-app --create-namespace
 
 $ helm repo list
 $ helm search repo
