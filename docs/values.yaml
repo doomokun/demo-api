@@ -7,6 +7,8 @@ appServer:
 
 appDatabase:
   name: api-demo-db
+  service:
+    type: ClusterIP
 
 global:
   environment: dev
