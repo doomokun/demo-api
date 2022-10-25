@@ -16,6 +16,7 @@ def helmDeploy(Map args) {
 			--set appServer.image.repository=${args.image} \
 			--set appServer.image.tag=${args.tag} \
 			--set appServer.service.type=NodePort \
+			--set appDatabase.service.type=NodePort \
 			--namespace=${args.namespace} \
 			--create-namespace
 		"""
@@ -26,6 +27,7 @@ def helmDeploy(Map args) {
 			--set appServer.image.repository=${args.image} \
 			--set appServer.image.tag=${args.tag} \
 			--set appServer.service.type=NodePort \
+			--set appDatabase.service.type=NodePort \
 			--namespace=${args.namespace} \
 			--create-namespace
 		"""
